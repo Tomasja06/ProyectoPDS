@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NoteSahre</title>
+    <!-- Vincula el archivo JavaScript -->
+    <script src="script.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.tiny.cloud/1/xhycahu4z12c1ojkbxhgwdzqe49sk0bcd9u6na2ae71d8mfr/tinymce/7/tinymce.min.js" referrerpolicy="origin"></script>
+    <script src="/webadmin/tinymce/tinymce_4_9_2/langs/es.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="menu">
+                <ul>
+                    <li><a href="index.html">Notas</a></li>
+                    <li><a href="calificaciones.html">Calificaciones</a></li>
+                    <li><a href="rangos.html">Rangos</a></li>
+                    <li><a href="amigos.html">Amigos</a></li>
+                    <li><a href="usuario.html">Usuario</a></li>
+                    <button id="changeSkinButton">Cambiar Tema</button>
+                </ul>
+            </div>
+        </div>
+    <div id="yo" style="position: relative; background: #F4F3DB"></div>
+    <!-- Place the following <script> and <textarea> tags your HTML's <body> -->
+    <script>
+        tinymce.init({
+        selector: '#yo  ',
+        language: 'es',
+        skin: 'oxide-dark',
+        menubar: 'home file edit insert view format table tools help',
+        plugins: 'anchor autolink charmap codesample emoticons image link lists media searchreplace table visualblocks wordcount checklist mediaembed casechange export formatpainter pageembed linkchecker a11ychecker tinymcespellchecker permanentpen powerpaste advtable advcode editimage advtemplate ai mentions tinycomments tableofcontents footnotes mergetags autocorrect typography inlinecss markdown',
+        toolbar: 'undo redo | blocks fontfamily fontsize | bold italic underline strikethrough | link image media table mergetags | addcomment showcomments | spellcheckdialog a11ycheck typography | align lineheight | checklist numlist bullist indent outdent | emoticons charmap | removeformat',
+        tinycomments_mode: 'embedded',
+        tinycomments_author: 'Author name',
+        menu: {
+            home:{ title: 'Home', items: ' Nueva nota | Randall | Notas | Amigos | Rango | Salir' },
+            file: { title: 'File', items: 'newdocument restoredraft | preview | importword exportpdf exportword | print | deleteallconversations' },
+            edit: { title: 'Edit', items: 'undo redo | cut copy paste pastetext | selectall | searchreplace' },
+            view: { title: 'View', items: 'code revisionhistory | visualaid visualchars visualblocks | spellchecker | preview fullscreen | showcomments' },
+            insert: { title: 'Insert', items: 'image link media addcomment pageembed codesample inserttable | charmap emoticons hr | pagebreak nonbreaking anchor tableofcontents | insertdatetime' },
+            format: { title: 'Format', items: 'bold italic underline strikethrough superscript subscript codeformat | styles blocks fontfamily fontsize align lineheight | forecolor backcolor | language | removeformat' },
+            tools: { title: 'Tools', items: 'spellchecker spellcheckerlanguage | a11ycheck code wordcount' },
+            table: { title: 'Table', items: 'inserttable | cell row column | advtablesort | tableprops deletetable' },
+            help: { title: 'Help', items: 'help' },
+            opciones: { title: 'Opciones', items: 'notas promedio amigos rango' }
+          },
+        mergetags_list: [
+            { value: 'First.Name', title: 'First Name' },
+            { value: 'Email', title: 'Email' },
+        ],
+        ai_request: (request, respondWith) => respondWith.string(() => Promise.reject("See docs to implement AI Assistant")),
+        });
+        document.getElementById("changeSkinButton").addEventListener("click", function() {
+            tinymce.activeEditor.setOption("skin", "oxide");
+        });
+    </script>
+</body>
