@@ -1,0 +1,34 @@
+#yo {
+    display: flex;
+    height: 100vh;
+    width: 100vw;
+}
+
+.menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid black;
+    font-family: "Arial", sans-serif;
+}
+
+.menu ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0;
+}
+
+.menu ul li {
+    margin: 0 10px;
+}
+
+.menu ul li a {
+    text-decoration: none;
+    color: black;
+}
+
+#changeSkinButton{
+    align-items: end;
+}
